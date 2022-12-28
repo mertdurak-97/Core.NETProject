@@ -1,0 +1,16 @@
+﻿@{
+    int valuePassedIn = this.ViewData.ContainsKey("blogId") ? (int)this.ViewData["blogId"] : -45;
+}
+<div class="comment-top">
+						<h4>Yorumunuzu Ekleyin</h4>
+						<div class="comment-bottom">
+							<form action="/Comment/PartialAddComment/" method="post">
+								<input class="form-control" type="text" name="CommentUserName" placeholder="Adınız & Soyadınız" required="">
+								<input class="form-control" type="text" name="CommentTitle" placeholder="Konu" required="">
+								<textarea class="form-control" name="CommentContent" placeholder="Yorumunuz..." required=""></textarea>
+								<textarea style="display:none" class="form-control" name="BlogID" placeholder="Yorumunuz...">@valuePassedIn</textarea>
+								<button type="submit" class="btn btn-danger submit">Yorum Yap</button>
+							</form>
+						</div>
+					</div>
+					

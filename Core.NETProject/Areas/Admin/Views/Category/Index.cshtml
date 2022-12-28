@@ -1,0 +1,40 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<EntityLayer.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<h1>Kategori Listesi</h1>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>KATEGORİ ADI</th>
+        <th>PASİF YAP</th>
+        <th>AKTİF YAP</th>
+        <th>DÜZENLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.CategoryID</th>
+            <td>@item.CategoryName</td>
+            <td><a href="/Admin/Category/CategoryDelete/@item.CategoryID" class="btn btn-danger" id="DeleteBtn" onclick="return confirm('Silmek İstediğinize Emin Misiniz ?');">Sil</a></td>
+            <td><a href="#" class="btn btn-primary">Ekle</a></td>
+            <td><a href="#" class="btn btn-success">Düzenle</a></td>
+        </tr>
+    } 
+</table>
+<a href="/Admin/Category/CategoryAdd/" class="btn btn-warning">Yeni Kategori</a>
+<br />
+<br />
+@Html.PagedListPager((IPagedList)Model, page=> Url.Action("Index",new{page}))
+
+@*<script>
+    $('#DeleteBtn').click(function(){
+       swal("Good job!", "You clicked the button!", "success");
+    });
+</script>*@

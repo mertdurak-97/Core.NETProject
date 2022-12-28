@@ -1,0 +1,230 @@
+﻿@using EntityLayer
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Contacts 2</title>
+
+    <link href="~/inspinia-gh-pages/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/inspinia-gh-pages/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/inspinia-gh-pages/css/animate.css" rel="stylesheet">
+    <link href="~/inspinia-gh-pages/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+       
+        <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+                    @foreach (var item in Model)
+                    {
+                         <a href="profile.html">
+
+                            <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/@item.ImageUrl">
+                            
+
+                            <h3 class="m-b-xs"><strong>@item.NameSurname</strong></h3>
+
+                            <div class="font-bold">Bilgisayar Mühendisi</div>
+                            <address class="m-t-md">
+                                <strong>Twitter, Inc.</strong><br>
+                                795 Folsom Ave, Suite 600<br>
+                                Ankara, Turkey <br>
+                                <abbr title="Phone">P:</abbr> (530) 456-7890
+                            </address>
+
+                        </a>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href=""  class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Ara </a>
+                                <a href=""  class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Mail</a>
+                                <a href=""  class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Takip</a>
+                            </div>
+                        </div>
+                    }
+
+                   
+
+                </div>
+            </div>
+            @*<div class="col-lg-3">
+                <div class="contact-box center-version">
+
+                    <a href="profile.html">
+
+                        <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a1.jpg">
+
+
+                        <h3 class="m-b-xs"><strong>Deniz Yıldırım</strong></h3>
+
+                        <div class="font-bold">Bilgisayar Mühendisi</div>
+                        <address class="m-t-md">
+                            <strong>Twitter, Inc.</strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            Ankara, Turkey <br>
+                            <abbr title="Phone">P:</abbr> (545) 456-7890
+                        </address>
+
+                    </a>
+                    <div class="contact-box-footer">
+                        <div class="m-t-xs btn-group">
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Ara </a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Mail</a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Takip</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+
+                    <a href="profile.html">
+
+                        <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a3.jpg">
+
+
+                        <h3 class="m-b-xs"><strong>Gamze Çelik</strong></h3>
+
+                        <div class="font-bold">Grafik Tasarımıcı</div>
+                        <address class="m-t-md">
+                            <strong>Twitter, Inc.</strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            Antalya, Turkey 94107<br>
+                            <abbr title="Phone">P:</abbr> (532) 456-7890
+                        </address>
+
+                    </a>
+                    <div class="contact-box-footer">
+                        <div class="m-t-xs btn-group">
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Ara </a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Mail</a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Takip</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+
+                    <a href="profile.html">
+
+                        <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a4.jpg">
+
+
+                        <h3 class="m-b-xs"><strong>Alpaslan Mert Durak</strong></h3>
+
+                        <div class="font-bold">Yazılım Geliştiricisi</div>
+                        <address class="m-t-md">
+                            <strong>Twitter, Inc.</strong><br>
+                            15.000 Folsom Ave, Suite 600<br>
+                            Ankara, Turkey <br>
+                            <abbr title="Phone">P:</abbr> (530) 456-7890
+                        </address>
+
+                    </a>
+                    <div class="contact-box-footer">
+                        <div class="m-t-xs btn-group">
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Ara </a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Mail</a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Takip</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+
+                    <a href="profile.html">
+
+                        <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a5.jpg">
+
+
+                        <h3 class="m-b-xs"><strong>Hande Kılıç</strong></h3>
+
+                        <div class="font-bold">Yazılım Geliştiricisi</div>
+                        <address class="m-t-md">
+                            <strong>Twitter, Inc.</strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            İstanbul, Turkey <br>
+                            <abbr title="Phone">P:</abbr> (507) 456-7890
+                        </address>
+
+                    </a>
+                    <div class="contact-box-footer">
+                        <div class="m-t-xs btn-group">
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Ara </a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Mail</a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Takip</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+
+                    <a href="profile.html">
+
+                        <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a6.jpg">
+
+
+                        <h3 class="m-b-xs"><strong>Hazal Yılmaz</strong></h3>
+
+                        <div class="font-bold">Direktör</div>
+                        <address class="m-t-md">
+                            <strong>Twitter, Inc.</strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            İzmir, Turkey <br>
+                            <abbr title="Phone">P:</abbr> (555) 456-7890
+                        </address>
+
+                    </a>
+                    <div class="contact-box-footer">
+                        <div class="m-t-xs btn-group">
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-phone"></i> Ara </a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-envelope"></i> Mail</a>
+                            <a href=""  class="btn btn-xs btn-white"><i class="fa fa-user-plus"></i> Takip</a>
+                        </div>
+                    </div>*@
+
+                @*</div>*@
+            </div>
+        </div>
+   
+
+
+
+    <!-- Mainly scripts -->
+    <script src="~/inspinia-gh-pages/js/jquery-3.1.1.min.js"></script>
+    <script src="~/inspinia-gh-pages/js/popper.min.js"></script>
+    <script src="~/inspinia-gh-pages/js/bootstrap.js"></script>
+    <script src="~/inspinia-gh-pages/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/inspinia-gh-pages/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="~/inspinia-gh-pages/js/inspinia.js"></script>
+    <script src="~/inspinia-gh-pages/js/plugins/pace/pace.min.js"></script>
+
+
+</body>
+
+</html>
+
+   

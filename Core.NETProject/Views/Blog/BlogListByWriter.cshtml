@@ -1,0 +1,33 @@
+﻿@using EntityLayer
+@model List<Blog>
+@{
+    ViewData["Title"] = "BlogListByWriter";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+	<link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+<h1>Yazarın Blogları</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Blog Başlığı</th>
+        <th>Oluşturma Tarihi</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.BlogID</th>
+            <td>@item.BlogTitle</td>
+            <td>@item.BlogCreateDate</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.BlogStatus</td>
+            <td><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@*<button href="#" class="btn btn-info">Yazınızı Kaydedin</button>*@

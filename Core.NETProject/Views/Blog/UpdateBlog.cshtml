@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Blog
+
+@{
+    ViewData["Title"] = "UpdateBlog";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Blogları Güncelleme Sayfası</h1>
+@using (Html.BeginForm("UpdateBlog", "Blog", FormMethod.Post))
+{
+    @Html.Label("Blog ID")
+    @Html.TextAreaFor(x=>x.BlogID,new{@class="form-control"})
+    <br />
+    @Html.Label("Blog Başlığı")
+    @Html.TextAreaFor(x=>x.BlogTitle,new{@class="form-control"})
+    <br />
+     @Html.Label("Blog Kategori")
+     @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv,new{@class="form-control"})
+    <br />
+    @Html.Label("Blog İçeriği")
+    @Html.TextAreaFor(x=>x.BlogContent,10,3,new{@class="form-control"})
+     <br />
+     <button href="/Blog/BlogAdd/"class="btn btn-primary">Blog Güncelle</button>
+}
+

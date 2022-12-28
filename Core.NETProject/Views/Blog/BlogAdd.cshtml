@@ -1,0 +1,52 @@
+﻿ @model EntityLayer.Blog
+
+
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+<link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+<h1>Yeni Blog Girişi</h1>
+<br />
+
+
+        <form asp-action="BlogAdd" autocomplete="off" enctype="multipart/form-data">
+
+                    @Html.Label("Blog Başlığı")
+                    @Html.TextAreaFor(x=>x.BlogTitle,new{@class="form-control"})
+                    @Html.ValidationMessageFor(x=>x.BlogTitle)
+                    <br />
+                    @Html.Label("Kategori")
+                    @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv,new{@class="form-control"})
+                    <br />
+                    @Html.Label("Blog İçeriği")
+                    @Html.TextAreaFor(x=>x.BlogContent,12,3,new{@class="form-control"})
+                    @Html.ValidationMessageFor(x=>x.BlogContent)
+                    <br />
+                    @Html.Label("Blog Resmi")
+                    <div class="form-group">
+                    <input  type="file" name="image" >
+                    </div>
+                    <br />
+                   <button href="#" class="btn btn-primary">Yazınızı Kaydedin</button>
+        </form>   
+       
+
+
+
+
+                
+
+           
+
+
+
+
+
+
+
+
+
+
+

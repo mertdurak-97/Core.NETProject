@@ -1,0 +1,25 @@
+﻿@using EntityLayer;
+@model List<Category>
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+        <th>Durumu</th>
+        <th>Detaylar</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+     <tr>
+        <td>@x.CategoryID</td>
+        <td>@x.CategoryName</td>
+        <td>@x.CategoryStatus</td>
+        <td><a href="#" class="btn btn-primary">Detaylar</a></td>
+        <td><a href="#" class="btn btn-danger">Sil</a></td>
+    </tr>
+    }
+</table>
